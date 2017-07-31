@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:"
+      name = "Miscellaneous">
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+   </Group>
    <FileRef
       location = "container:Staaf.xcodeproj">
    </FileRef>
