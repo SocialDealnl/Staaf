@@ -10,15 +10,15 @@ import Foundation
 
 extension Array where Element == StaafDataGroup {
     
-    internal func min() -> Double {
+    internal func min() -> Staaf.Value {
         let group = self.min { (a: StaafDataGroup, b: StaafDataGroup) -> Bool in
             return a.minimumValue < b.minimumValue
         }
         
-        return group?.maximumValue ?? 0
+        return group?.minimumValue ?? 0
     }
     
-    internal func max() -> Double {
+    internal func max() -> Staaf.Value {
         let group = self.max { (a: StaafDataGroup, b: StaafDataGroup) -> Bool in
             return a.maximumValue < b.maximumValue
         }

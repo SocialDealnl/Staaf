@@ -8,16 +8,29 @@
 
 import Foundation
 
-public struct StaafData {
+public struct StaafData: TextCacheable {
     
     public let groups: [StaafDataGroup]
-    public let minimumValue: Double
-    public let maximumValue: Double
+    public let groupCount: Int
+    public let minimumValue: Staaf.Value
+    public let maximumValue: Staaf.Value
+    
+    var barCount: Int {
+        return groups.reduce(0) { (result: Int, group: StaafDataGroup) -> Int in
+            return result + group.valueCount
+        }
+    }
     
     public init(_ groups: [StaafDataGroup]) {
         self.groups = groups
-        
+        self.groupCount = groups.count
         self.minimumValue = groups.min()
         self.maximumValue = groups.max()
+    }
+    
+    internal func text(_ formatter: ValueFormatter) -> [String] {
+        return groups.map { (group: StaafDataGroup) -> String in
+            return group.label ?? ""
+        }
     }
 }

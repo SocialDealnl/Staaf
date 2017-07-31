@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,13 +28,12 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbM-e2-ohl" customClass="Staaf" customModule="Staaf">
                                         <rect key="frame" x="0.0" y="137" width="343" height="343"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pbM-e2-ohl" secondAttribute="height" multiplier="1:1" id="qwv-FP-b32"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="pbM-e2-ohl" firstAttribute="centerX" secondItem="n8F-rA-B20" secondAttribute="centerX" id="QwZ-EI-ACn"/>
                                     <constraint firstItem="pbM-e2-ohl" firstAttribute="centerY" secondItem="n8F-rA-B20" secondAttribute="centerY" id="tgz-0m-wU2"/>
@@ -51,7 +50,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="staaf" destination="pbM-e2-ohl" id="I08-vc-sU6"/>
+                        <outlet property="staaf" destination="pbM-e2-ohl" id="pMO-15-l6Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
