@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'Staaf'
   s.version      = '0.0.1'
-  s.summary      = ''
+  s.summary      = 'Simple grouped bar graph'
   s.homepage     = 'https://github.com/robhendriks/Staaf'
   s.license      = 'MIT'
   s.author       = { 'Rob Hendriks' => 'robhendriks@shareforce.eu' }
