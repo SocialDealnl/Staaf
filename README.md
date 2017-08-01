@@ -44,7 +44,7 @@ staaf.setup {
     // Configure layout
     $0.barSpacing = 5
     $0.barOffset = 5
-    $0.groupDistribution = .proportionally
+    $0.groupDistribution = .proportionally // or .equally
     $0.groupSpacing = 15
 
     // Configure group labels
