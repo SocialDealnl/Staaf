@@ -42,10 +42,10 @@ staaf.setup {
     $0.maximumValue = 100
 
     // Configure layout
-    $0.barSpacing = 5
-    $0.barOffset = 5
+    $0.barSpacing = 5 // horizontal space between each individual bar
+    $0.barOffset = 5 // vertical space between bars and the border
     $0.groupDistribution = .proportionally // or .equally
-    $0.groupSpacing = 15
+    $0.groupSpacing = 15 // horizontal space between each group
 
     // Configure group labels
     $0.groupLabelFont = UIFont.systemFont(ofSize: 9)
