@@ -71,3 +71,27 @@ staaf.setup {
     $0.data = staafData
 }
 ```
+
+### Value Formatting
+
+```swift
+staaf.valueFormatter = WholeNumberFormatter() // 0
+
+// OR
+staaf.valueFormatter = DecimalFormatter() // 0.00
+
+// OR
+staaf.valueFormatter = DecimalFormatter(1) // 0.0
+```
+
+### Color Strategies
+
+```swift
+staaf.colorStrategy = SingleColorStrategy(UIColor.red)
+
+// OR
+staaf.colorStrategy = OddEvenColorStrategy(UIColor.red, UIColor.green)
+
+// OR
+staaf.colorStrategy = RainbowColorStrategy([UIColor.red, UIColor.green, UIColor.blue])
+```
