@@ -72,19 +72,19 @@ staaf.setup {
 }
 ```
 
-### Value Formatting
+### Formatting
 
 ```swift
-staaf.valueFormatter = WholeNumberFormatter() // 0
+staaf.valueFormatter = WholeNumberFormatter() // Outputs: 0
 
 // OR
-staaf.valueFormatter = DecimalFormatter() // 0.00
+staaf.valueFormatter = DecimalFormatter() // Outputs: 0.00
 
 // OR
-staaf.valueFormatter = DecimalFormatter(1) // 0.0
+staaf.valueFormatter = DecimalFormatter(1) // Outputs: 0.0
 ```
 
-### Color Strategies
+### Styling
 
 ```swift
 staaf.colorStrategy = SingleColorStrategy(UIColor.red)
@@ -95,3 +95,11 @@ staaf.colorStrategy = OddEvenColorStrategy(UIColor.red, UIColor.green)
 // OR
 staaf.colorStrategy = RainbowColorStrategy([UIColor.red, UIColor.green, UIColor.blue])
 ```
+
+Change the strategy's behaviour.
+
+```swift
+staaf.colorStrategy.mode = .relative
+```
+
+`.relative`, `.absolute` or .`group`
