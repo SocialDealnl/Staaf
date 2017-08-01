@@ -1,14 +1,27 @@
 # Staaf
 
-Low-Effort Bar Graph
-
-### Demo
+Low-effort bar graph.
 
 ![Demo](https://github.com/robhendriks/Staaf/raw/master/Screenshots/1.gif)
 
-### Usage
+- [Features](#features)
+- [Usage](#usage)
+
+## Features
+
+- [x] Grouped Bar Graph
+- [x] Customizable Graphics
+- [x] Flexible Formatting
+- [ ] Unit and Integration Testing
+- [ ] Documentation
+
+## Usage
+
+### Data Model
 
 ```swift
+import Staaf
+
 let staafData = StaafData([
     StaafDataGroup([1, 2, 3], label: "A"),
     StaafDataGroup([2, 4, 6], label: "B"),
@@ -16,7 +29,11 @@ let staafData = StaafData([
 ])
 ```
 
+### Grouped Bar Graph
+
 ```swift
+import Staaf
+
 let staaf = Staaf(frame: CGRect(x: 0, y: 0, width: 320, height: 320))
 
 staaf.setup {
@@ -54,4 +71,3 @@ staaf.setup {
     $0.data = staafData
 }
 ```
-
