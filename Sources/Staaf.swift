@@ -33,7 +33,10 @@ open class Staaf: UIView {
     }
     
     open var groupDistribution: Distribution = .proportionally {
-        didSet { setNeedsLayout() }
+        didSet {
+            setNeedsLayout()
+            setNeedsDisplay()
+        }
     }
     
     ///
@@ -102,6 +105,9 @@ open class Staaf: UIView {
         didSet {
             updateGroupTextAttributes()
             updateValueTextAttributes()
+            
+            setNeedsLayout()
+            setNeedsDisplay()
         }
     }
     
@@ -121,25 +127,23 @@ open class Staaf: UIView {
     fileprivate var groupTextCache: TextCache = TextCache()
     fileprivate var groupTextAttributes: TextAttributes!
     
-    fileprivate var ignoreUpdates: Bool = true
+    fileprivate var ignoreUpdates: Bool = false
     
     // MARK: - Initializers
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        prepare()
+        
+        //
     }
     
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
-        prepare()
+        
+        //
     }
     
     // MARK: - Methods
-    
-    fileprivate func prepare() {
-        ignoreUpdates = false
-    }
     
     fileprivate func updateValueTextAttributes() {
         guard !ignoreUpdates else { return }
@@ -163,7 +167,6 @@ open class Staaf: UIView {
         }
         
         valueTextCache.clearOnUpdate = true
-        setNeedsDisplay()
     }
     
     fileprivate func updateGroupTextAttributes() {
@@ -186,8 +189,6 @@ open class Staaf: UIView {
         guard !ignoreUpdates, let data = data else { return }
         
         data.cache(&groupTextCache, formatter: valueFormatter, attributes: groupTextAttributes)
-        
-        setNeedsDisplay()
     }
         
     open func setup(_ callback: (Staaf) -> ()) {
@@ -197,6 +198,9 @@ open class Staaf: UIView {
         
         updateGroupTextAttributes()
         updateValueTextAttributes()
+        
+        setNeedsLayout()
+        setNeedsDisplay()
     }
     
     open override func layoutSubviews() {
@@ -277,7 +281,9 @@ open class Staaf: UIView {
         let groupRect: CGRect = barRect(for: rect)
         var groupX: CGFloat = groupSpacing
         
-        var index: Int = 0
+        /*var index: Int = 0*/
+        
+        var staafPath: StaafPath = StaafPath()
         
         for i in 0..<data.groupCount {
             let group = data.groups[i]
@@ -291,6 +297,9 @@ open class Staaf: UIView {
             var barX: CGFloat = 0
             let barWidth: CGFloat = cacheItem.barWidth
             
+            staafPath.groupIndex = i
+            staafPath.relativeIndex = 0
+            
             for j in 0..<group.valueCount {
                 let value: Value = group.values[j]
                 
@@ -299,16 +308,18 @@ open class Staaf: UIView {
                 let barOffset: CGFloat = groupRect.height - barHeight
                 
                 let barRect: CGRect = CGRect(x: barX, y: groupRect.origin.y + barOffset, width: barWidth, height: barHeight)
-                colorStrategy.color(at: j).setFill()
+                colorStrategy.color(for: staafPath).setFill()
                 ctx.fill(barRect)
                 
                 // Draw value label
-                let textCacheItem: TextCacheItem = valueTextCache.items[index]
+                let textCacheItem: TextCacheItem = valueTextCache.items[staafPath.relativeIndex]
                 let textLocation: CGPoint = CGPoint(x: barRect.midX - textCacheItem.size.width / 2, y: barRect.origin.y - textCacheItem.size.height - valueLabelOffset)
                 textCacheItem.string.draw(at: textLocation, withAttributes: valueTextAttributes)
                 
                 barX += barWidth + barSpacing
-                index += 1
+                
+                staafPath.relativeIndex += 1
+                staafPath.absoluteIndex += 1
             }
             
             // Draw group label

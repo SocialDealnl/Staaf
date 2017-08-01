@@ -6,9 +6,11 @@
 //  Copyright © 2017 Rob Hendriks. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public struct SingleColorStrategy: ColorStrategy {
+    
+    public var mode: ColorStrategyMode = .relative
     
     fileprivate let baseColor: UIColor
     
@@ -16,7 +18,7 @@ public struct SingleColorStrategy: ColorStrategy {
         self.baseColor = baseColor
     }
     
-    public func color(at index: Int) -> UIColor {
+    public func color(for path: StaafPath) -> UIColor {
         return baseColor
     }
 }

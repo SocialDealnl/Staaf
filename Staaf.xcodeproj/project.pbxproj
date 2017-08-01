@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44C9040C1F30696F0075F7D9 /* StaafPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C9040B1F30696F0075F7D9 /* StaafPath.swift */; };
+		44C9040E1F306C0E0075F7D9 /* RainbowColorStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C9040D1F306C0E0075F7D9 /* RainbowColorStrategy.swift */; };
+		44C904121F306F590075F7D9 /* ColorStrategyMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C904111F306F590075F7D9 /* ColorStrategyMode.swift */; };
 		44E12DE11F2F0F3400A2A03B /* Comparable+Staaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E12DE01F2F0F3400A2A03B /* Comparable+Staaf.swift */; };
 		44E12DE31F2F265400A2A03B /* FloatingPoint+Staaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E12DE21F2F265400A2A03B /* FloatingPoint+Staaf.swift */; };
 		44E12DEC1F2F56BE00A2A03B /* ValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E12DEB1F2F56BE00A2A03B /* ValueFormatter.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44C9040B1F30696F0075F7D9 /* StaafPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaafPath.swift; sourceTree = "<group>"; };
+		44C9040D1F306C0E0075F7D9 /* RainbowColorStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowColorStrategy.swift; sourceTree = "<group>"; };
+		44C904111F306F590075F7D9 /* ColorStrategyMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStrategyMode.swift; sourceTree = "<group>"; };
 		44E12DE01F2F0F3400A2A03B /* Comparable+Staaf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+Staaf.swift"; sourceTree = "<group>"; };
 		44E12DE21F2F265400A2A03B /* FloatingPoint+Staaf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Staaf.swift"; sourceTree = "<group>"; };
 		44E12DEB1F2F56BE00A2A03B /* ValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueFormatter.swift; sourceTree = "<group>"; };
@@ -82,8 +88,10 @@
 			isa = PBXGroup;
 			children = (
 				44E12DF61F2F63B300A2A03B /* ColorStrategy.swift */,
-				44E12DF81F2F644600A2A03B /* SingleColorStrategy.swift */,
+				44C904111F306F590075F7D9 /* ColorStrategyMode.swift */,
 				44E12DFA1F2F64E100A2A03B /* OddEvenColorStrategy.swift */,
+				44C9040D1F306C0E0075F7D9 /* RainbowColorStrategy.swift */,
+				44E12DF81F2F644600A2A03B /* SingleColorStrategy.swift */,
 			);
 			path = Strategies;
 			sourceTree = "<group>";
@@ -119,15 +127,16 @@
 		D4230C711F2BA26F00E18571 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				44E12DF11F2F5B8900A2A03B /* Utilities */,
 				D4230C731F2BA28100E18571 /* Staaf.h */,
 				D4230C7D1F2BA35400E18571 /* Staaf.swift */,
 				D4230C7F1F2BA35B00E18571 /* StaafData.swift */,
 				D4230C811F2BA36200E18571 /* StaafDataGroup.swift */,
+				44C9040B1F30696F0075F7D9 /* StaafPath.swift */,
 				D4230CBD1F2BA9FB00E18571 /* Extensions */,
 				44E12DEA1F2F56A700A2A03B /* Formatters */,
 				44E12DE91F2F56A200A2A03B /* Strategies */,
 				D4230C7A1F2BA29500E18571 /* Supporting Files */,
+				44E12DF11F2F5B8900A2A03B /* Utilities */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -295,12 +304,15 @@
 				44E12DF51F2F5F3F00A2A03B /* TextCacheable.swift in Sources */,
 				44E12DF01F2F56CF00A2A03B /* WholeNumberFormatter.swift in Sources */,
 				44E12DF71F2F63B300A2A03B /* ColorStrategy.swift in Sources */,
+				44C9040C1F30696F0075F7D9 /* StaafPath.swift in Sources */,
 				D4230C7E1F2BA35400E18571 /* Staaf.swift in Sources */,
 				D4230CBF1F2BAA2800E18571 /* Array+Staaf.swift in Sources */,
+				44C9040E1F306C0E0075F7D9 /* RainbowColorStrategy.swift in Sources */,
 				44E12DEE1F2F56C600A2A03B /* DecimalFormatter.swift in Sources */,
 				D4230C821F2BA36200E18571 /* StaafDataGroup.swift in Sources */,
 				44E12DF31F2F5BBD00A2A03B /* TextCache.swift in Sources */,
 				44E12DEC1F2F56BE00A2A03B /* ValueFormatter.swift in Sources */,
+				44C904121F306F590075F7D9 /* ColorStrategyMode.swift in Sources */,
 				D4230C801F2BA35B00E18571 /* StaafData.swift in Sources */,
 				44E12DF91F2F644600A2A03B /* SingleColorStrategy.swift in Sources */,
 			);

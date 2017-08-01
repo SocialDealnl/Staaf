@@ -6,9 +6,11 @@
 //  Copyright © 2017 Rob Hendriks. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public struct OddEvenColorStrategy: ColorStrategy {
+    
+    public var mode: ColorStrategyMode = .relative
     
     fileprivate let oddColor: UIColor
     fileprivate let evenColor: UIColor
@@ -18,7 +20,7 @@ public struct OddEvenColorStrategy: ColorStrategy {
         self.evenColor = evenColor
     }
     
-    public func color(at index: Int) -> UIColor {
-        return index % 2 == 0 ? evenColor : oddColor
+    public func color(for path: StaafPath) -> UIColor {
+        return index(path) % 2 == 0 ? evenColor : oddColor
     }
 }

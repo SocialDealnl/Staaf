@@ -23,38 +23,108 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8F-rA-B20">
-                                <rect key="frame" x="16" y="35" width="343" height="617"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PFd-D7-J7U">
+                                <rect key="frame" x="16" y="467.5" width="343" height="184.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbM-e2-ohl" customClass="Staaf" customModule="Staaf">
-                                        <rect key="frame" x="0.0" y="137" width="343" height="343"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distribution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCE-yG-fWS">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="13.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4HB-35-s6a">
+                                        <rect key="frame" x="0.0" y="18.5" width="343" height="29"/>
+                                        <segments>
+                                            <segment title="Proportionally"/>
+                                            <segment title="Equally"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSY-qf-Xpz">
+                                        <rect key="frame" x="0.0" y="51.5" width="343" height="13.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wog-b3-28j">
+                                        <rect key="frame" x="0.0" y="70" width="343" height="29"/>
+                                        <segments>
+                                            <segment title="Single"/>
+                                            <segment title="Parity"/>
+                                            <segment title="Rainbow"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Indexing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0Y-ad-19a">
+                                        <rect key="frame" x="0.0" y="103" width="343" height="13.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3aD-v5-Nug">
+                                        <rect key="frame" x="0.0" y="121.5" width="343" height="29"/>
+                                        <segments>
+                                            <segment title="Absolute"/>
+                                            <segment title="Relative"/>
+                                            <segment title="Group"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZq-x5-aEE">
+                                        <rect key="frame" x="0.0" y="154.5" width="343" height="30"/>
+                                        <state key="normal" title="Reload"/>
+                                        <connections>
+                                            <action selector="randomize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bsb-VR-XRE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staaf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze8-or-Nf1">
+                                <rect key="frame" x="16" y="35" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Gz-Hd-7Xj">
+                                <rect key="frame" x="16" y="70" width="343" height="382.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r14-hY-DKO" customClass="Staaf" customModule="Staaf">
+                                        <rect key="frame" x="0.0" y="20.5" width="343" height="343"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="pbM-e2-ohl" secondAttribute="height" multiplier="1:1" id="qwv-FP-b32"/>
+                                            <constraint firstAttribute="width" secondItem="r14-hY-DKO" secondAttribute="height" multiplier="1:1" id="6we-go-cFI"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="pbM-e2-ohl" firstAttribute="centerX" secondItem="n8F-rA-B20" secondAttribute="centerX" id="QwZ-EI-ACn"/>
-                                    <constraint firstItem="pbM-e2-ohl" firstAttribute="centerY" secondItem="n8F-rA-B20" secondAttribute="centerY" id="tgz-0m-wU2"/>
-                                    <constraint firstItem="pbM-e2-ohl" firstAttribute="width" secondItem="n8F-rA-B20" secondAttribute="width" id="wKR-ct-Ism"/>
+                                    <constraint firstItem="r14-hY-DKO" firstAttribute="centerY" secondItem="7Gz-Hd-7Xj" secondAttribute="centerY" id="AXb-Xc-6HA"/>
+                                    <constraint firstItem="r14-hY-DKO" firstAttribute="width" secondItem="7Gz-Hd-7Xj" secondAttribute="width" id="WV2-0g-6gx"/>
+                                    <constraint firstItem="r14-hY-DKO" firstAttribute="centerX" secondItem="7Gz-Hd-7Xj" secondAttribute="centerX" id="iyO-pv-Huh"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="n8F-rA-B20" secondAttribute="trailing" id="BfU-yN-i6D"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="n8F-rA-B20" secondAttribute="bottom" constant="15" id="lw6-Sh-Nh4"/>
-                            <constraint firstItem="n8F-rA-B20" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pUq-zo-d2B"/>
-                            <constraint firstItem="n8F-rA-B20" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="sbt-hh-Wqk"/>
+                            <constraint firstItem="Ze8-or-Nf1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1Fe-Z1-any"/>
+                            <constraint firstItem="PFd-D7-J7U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4QJ-5F-7R0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ze8-or-Nf1" secondAttribute="trailing" id="8py-wI-dAZ"/>
+                            <constraint firstItem="7Gz-Hd-7Xj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9lz-Ka-tCR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Gz-Hd-7Xj" secondAttribute="trailing" id="D69-EX-BUc"/>
+                            <constraint firstItem="PFd-D7-J7U" firstAttribute="top" secondItem="7Gz-Hd-7Xj" secondAttribute="bottom" constant="15" id="QKx-kM-ZOn"/>
+                            <constraint firstItem="7Gz-Hd-7Xj" firstAttribute="top" secondItem="Ze8-or-Nf1" secondAttribute="bottom" constant="15" id="Xom-S0-hua"/>
+                            <constraint firstItem="Ze8-or-Nf1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="YKN-EY-xeo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PFd-D7-J7U" secondAttribute="bottom" constant="15" id="sRh-3e-AvK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PFd-D7-J7U" secondAttribute="trailing" id="xgJ-bw-4IX"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="staaf" destination="pbM-e2-ohl" id="pMO-15-l6Z"/>
+                        <outlet property="colorModeSegmentedControl" destination="3aD-v5-Nug" id="yMK-Kg-UhK"/>
+                        <outlet property="colorSegmentedControl" destination="wog-b3-28j" id="3io-r0-szs"/>
+                        <outlet property="distributionSegmentedControl" destination="4HB-35-s6a" id="bxZ-jv-eoZ"/>
+                        <outlet property="staaf" destination="r14-hY-DKO" id="Bmb-MR-I4F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-149.59999999999999" y="29.23538230884558"/>
         </scene>
     </scenes>
 </document>
